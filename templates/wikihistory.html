@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CS253 Wiki</title>
+         <link type="text/css" rel="stylesheet" href="/static/main.css" />
+    </head>
+    <body>
+        <h1><a href="/" class="main-title">CS254 Wiki</a></h1>
+        <div class="login-area">
+            <a class="login-link" href="/_edit{{path}}">edit</a>
+            |
+            <a class="login-link" href="{{path}}">view</a>
+                &nbsp {{username}} ( <a class="login-link" href="/logout">logout</a>)
+        </div>
+        <div name="content">
+            <table>
+            {% for wikipage in wikipages %}
+            <tr>
+                <td>{{wikipage.created}}</td>
+                <td>{{wikipage.content[:80]}}</td>
+                <td><a class="login-link" href="{{path}}?v={{wikipage.key().id()}}">view</a></td>
+                <td><a class="login-link" href="/_edit{{path}}?v={{wikipage.key().id()}}">edit</a></td>
+            </tr>
+            {% endfor %}
+            </table>   
+        </div>
+    </body>
+</html>

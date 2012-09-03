@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CS253 Wiki</title>
+         <link type="text/css" rel="stylesheet" href="/static/main.css" />
+    </head>
+    <body>
+        <h1><a href="/" class="main-title">CS254 Wiki</a></h1>
+        <div class="login-area">
+            {% if logged_in %}
+                <a class="login-link" href="_edit{{wikipage.path}}">edit</a>
+                |
+                <a class="login-link" href="_history{{wikipage.path}}">history</a>
+                &nbsp {{username}} ( <a class="login-link" href="/logout">logout</a>)
+            {% else %}
+                <a class="login-link" href="/login">login</a>
+                |
+                <a class="login-link" href="/signup">signup</a>
+            {% endif %}
+        </div>
+        <div name="content">
+            {{wikipage.content}}
+        </div>
+    </body>
+</html>

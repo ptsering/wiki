@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CS253 Wiki</title>
+         <link type="text/css" rel="stylesheet" href="/static/main.css" />
+    </head>
+    <body>
+        <h1><a href="/" class="main-title">CS254 Wiki</a></h1>
+        <div class="login-area">
+            {{username}} ( <a class="login-link" href="/logout">logout</a>)
+        </div>
+        <form method="post">
+          <label>
+               <textarea name="content">{{wikipage.content}}</textarea>
+          </label>
+          <input type="submit" value = "Save">
+        </form>
+    </body>
+</html>
